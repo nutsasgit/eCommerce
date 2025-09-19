@@ -6,7 +6,7 @@ import { CartComponent } from './features/cart/cart.component';
 
 const routes: Routes = [
   {
-    path: "logIn",
+    path: "login",
     component: LoginComponent
   },
   {
