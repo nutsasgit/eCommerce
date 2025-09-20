@@ -1,0 +1,30 @@
+.firstNavContainer, .secondNavContainer{
+    width: 1920px;
+    height: 60px;
+    border: 1px solid black;
+    display: flex;
+    gap: 1400px;
+}
+.logoContainer{
+    display: flex;
+    gap: 6px;
+    margin-left: 100px;
+    margin-top: 20px;
+
+}
+.logo img{
+    width: 20px;
+    height: 20px;
+
+}
+.title{
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.loginContainer{
+    display: flex;
+    gap: 6px;
+    margin-top: 20px;
+}
