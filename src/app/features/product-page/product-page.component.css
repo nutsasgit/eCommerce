@@ -178,7 +178,6 @@
 }
 
 
-
 .filterMainContainer {
   position: relative; 
   padding: 10px 20px;
@@ -191,7 +190,9 @@
   align-items: center;
 }
 
-
+.showing{
+    margin-left: -50px;
+}
 .filterBox {
   display: flex;
   align-items: center;
@@ -287,3 +288,44 @@
 .sortOption:hover {
   background: #f1f1f1;
 }
+
+/*pagination*/
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 12px;
+  margin: 0 4px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;             
+  background-color: transparent;  
+  transition: all 0.3s;
+}
+
+
+.pagination a:hover:not(.active):not(.disabled) {
+  border: 1px solid #4CAF50;
+  background-color: none;
+}
+
+
+.pagination a.active {
+  color: black;
+  border: 1px solid #4CAF50;
+}
+
+
+.pagination a.disabled {
+  pointer-events: none;
+  color: #ccc;
+  border-color: transparent;
+}
+
+

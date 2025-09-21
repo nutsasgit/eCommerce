@@ -27,37 +27,37 @@
    <div class="filterMainContainer">
       <div class="filterLineTitle">Products</div>
       <div class="filterInfoContainer">
-         <div class="showing">Showing {{ filteredItems.length }} of {{ totalProducts }} results</div>
+         <div class="showing">Showing {{ showingFrom }}–{{ showingTo }} of {{ totalProducts }} results</div>
 
       <!-- Filter Button -->
-      <div class="filterBox" (click)="toggleFilter()">
-         <div class="slideIcon"><i class="bi bi-sliders"></i></div>
-         <div class="filter">Filter</div>
-      </div>
+         <div class="filterBox" (click)="toggleFilter()">
+            <div class="slideIcon"><i class="bi bi-sliders"></i></div>
+            <div class="filter">Filter</div>
+         </div>
 
-      <!-- Sort Dropdown -->
-      <div class="sortContainer">
-         <div class="sort">Sort by</div>
-         <div class="chevronDown" (click)="toggleDropdown()">
-            <i class="bi bi-chevron-down"></i>
+         <!-- Sort Dropdown -->
+         <div class="sortContainer">
+            <div class="sort">Sort by</div>
+            <div class="chevronDown" (click)="toggleDropdown()">
+               <i class="bi bi-chevron-down"></i>
+            </div>
+         </div>
+         <div *ngIf="dropdownFilter" class="sortDropdown">
+            <div class="sortOption" (click)="setSort('newest')">New Product list</div>
+            <div class="sortOption" (click)="setSort('low')">Price, low to high</div>
+            <div class="sortOption" (click)="setSort('height')">Price, high to low</div>
          </div>
       </div>
-      <div *ngIf="dropdownFilter" class="sortDropdown">
-         <div class="sortOption" (click)="setSort('newest')">New Product list</div>
-         <div class="sortOption" (click)="setSort('low')">Price, low to high</div>
-         <div class="sortOption" (click)="setSort('height')">Price, high to low</div>
-      </div>
-   </div>
 
    <!-- Filter Window -->
-   <div *ngIf="Filter" class="filterWindow">
+   <div *ngIf="filterVisible" class="filterWindow">
       <p>Select price</p>
       <div class="inputDiv">
          <input type="number" [(ngModel)]="from" placeholder="From *">
          <input type="number" [(ngModel)]="to" placeholder="To *">
       </div>
        <div class="applyButton">
-         <button (click)="filterFunction()">Apply</button>
+         <button (click)="applyFilter()">Apply</button>
        </div>  
    
    </div>
@@ -76,4 +76,17 @@
     
 </div>
 
+<div class="pagination">
+  <!-- Previous arrow -->
+  <a (click)="changePage(actualPage - 1)" [class.disabled]="actualPage === 1">&lt;</a>
+
+  <!-- Page numbers with ellipses -->
+  <ng-container *ngFor="let p of visiblePages">
+    <a *ngIf="isNumber(p)" (click)="changePage(p)" [class.active]="actualPage === p">{{ p }}</a>
+    <span *ngIf="!isNumber(p)">...</span>
+  </ng-container>
+
+  <!-- Next arrow -->
+  <a (click)="changePage(actualPage + 1)" [class.disabled]="actualPage === totalPages">&gt;</a>
+</div>
 
