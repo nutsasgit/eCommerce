@@ -8,6 +8,7 @@ import { CartComponent } from './features/cart/cart.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailsComponent } from './features/product-details/product-details.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     ProductPageComponent,
-    CartComponent
+    CartComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
