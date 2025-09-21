@@ -24,22 +24,45 @@
 <!--Main Container -->
 <div class="mainContainer"> 
     <!--Filter Line -->
-    <div class="filterMainContainer">
-        <div class="filterLineTitle">Products </div>
-        <div class="filterInfoContainer">
-            <div class="showing">Showing 1-10 of 100 results</div>
-            <div class="filterBox">
-                <div class="slideIcon"><i class="bi bi-sliders"></i></div>
-                <div class="filter">Filter</div>
-            </div>
-            <div class="sortContainer">
-                <div class="sort">Sort by</div>
-                 <div class="chevronDown">
-                    <i class="bi bi-chevron-down"></i>
-                 </div>
-            </div>
-        </div>
-    </div>
+   <div class="filterMainContainer">
+      <div class="filterLineTitle">Products</div>
+      <div class="filterInfoContainer">
+         <div class="showing">Showing {{ filteredItems.length }} of {{ totalProducts }} results</div>
+
+      <!-- Filter Button -->
+      <div class="filterBox" (click)="toggleFilter()">
+         <div class="slideIcon"><i class="bi bi-sliders"></i></div>
+         <div class="filter">Filter</div>
+      </div>
+
+      <!-- Sort Dropdown -->
+      <div class="sortContainer">
+         <div class="sort">Sort by</div>
+         <div class="chevronDown" (click)="toggleDropdown()">
+            <i class="bi bi-chevron-down"></i>
+         </div>
+      </div>
+      <div *ngIf="dropdownFilter" class="sortDropdown">
+         <div class="sortOption" (click)="setSort('newest')">New Product list</div>
+         <div class="sortOption" (click)="setSort('low')">Price, low to high</div>
+         <div class="sortOption" (click)="setSort('height')">Price, high to low</div>
+      </div>
+   </div>
+
+   <!-- Filter Window -->
+   <div *ngIf="Filter" class="filterWindow">
+      <p>Select price</p>
+      <div class="inputDiv">
+         <input type="number" [(ngModel)]="from" placeholder="From *">
+         <input type="number" [(ngModel)]="to" placeholder="To *">
+      </div>
+       <div class="applyButton">
+         <button (click)="filterFunction()">Apply</button>
+       </div>  
+   
+   </div>
+</div>
+
    <!--End Filter Line -->
    <!--Product Container -->
    <div class="productMainContainer">

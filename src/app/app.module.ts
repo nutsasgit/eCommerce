@@ -7,6 +7,7 @@ import { ProductPageComponent } from './features/product-page/product-page.compo
 import { CartComponent } from './features/cart/cart.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgxPaginationModule,
+    FormsModule
   
   ],
   providers: [provideHttpClient()],

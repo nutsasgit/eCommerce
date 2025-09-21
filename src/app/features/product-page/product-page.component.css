@@ -147,13 +147,11 @@
 .productCardContainer{
     width: 410px;
     height: 600px;
-    /*border: 1px solid black;*/
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 .productImage{
     width: 410px;
     height: 540px;
-    /*border: 1px solid black;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,8 +164,8 @@
 .productTitle{
     width: 410px;
     height: 25px;
-    /*border: 1px solid black;*/;
     margin-top: 5px;
+    padding-left: 6px;
     text-transform: capitalize;
     font-weight: 600;
     
@@ -175,6 +173,117 @@
 .productPrice{
     width: 410px;
     height: 25px;
-    /*border: 1px solid black;*/
+    padding-left: 6px;
+    
 }
 
+
+
+.filterMainContainer {
+  position: relative; 
+  padding: 10px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filterInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.filterBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.filterWindow {
+  position: absolute;
+  top: 50px; 
+  right: 120px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  width: 300px;
+  height: 140px;
+  z-index: 10;
+}
+.filterWindow p{
+    font-weight: 500;
+}
+.inputDiv{
+    display: flex;
+    gap: 10px;
+}
+
+.filterWindow label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.filterWindow input {
+  width: 130px;
+  height: 30px;
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+}
+
+.filterWindow button {
+  width: 110px;
+  height: 40px;
+  margin-top: 15px;
+  margin-left: 180px;
+  padding: 5px 12px;
+  background-color: orangered;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative; 
+}
+
+.chevronDown {
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+
+.sortDropdown {
+  position: absolute;
+  top: 50px; 
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 20;
+}
+
+.sortOption {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sortOption:hover {
+  background: #f1f1f1;
+}
