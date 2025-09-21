@@ -43,10 +43,10 @@
    <!--End Filter Line -->
    <!--Product Container -->
    <div class="productMainContainer">
-        <div class="productCardContainer">
-            <div class="productImage">Image</div>
-            <div class="productTitle">Title</div>
-            <div class="productPrice">Price</div>
+        <div class="productCardContainer" *ngFor="let item of allItems">
+            <div class="productImage"><img [src]="item.cover_image" [alt]="item.name"></div>
+            <div class="productTitle">{{ item.name }}</div>
+            <div class="productPrice">$ {{ item.price }}</div>
         </div>
    </div>
 

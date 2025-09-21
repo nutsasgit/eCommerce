@@ -140,28 +140,41 @@
     border: 1px solid black;
     margin-top: 20px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
 
 }
 .productCardContainer{
-    width: 400px;
+    width: 410px;
     height: 600px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 .productImage{
-    width: 400px;
+    width: 410px;
     height: 540px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.productImage img{
+    width: 300px;
+    height: 400px;
 }
 .productTitle{
-    width: 400px;
+    width: 410px;
     height: 25px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/;
     margin-top: 5px;
+    text-transform: capitalize;
+    font-weight: 600;
+    
 }
 .productPrice{
-    width: 400px;
+    width: 410px;
     height: 25px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 

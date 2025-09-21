@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './features/login/login.component';
 import { ProductPageComponent } from './features/product-page/product-page.component';
 import { CartComponent } from './features/cart/cart.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -15,9 +18,11 @@ import { CartComponent } from './features/cart/cart.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule,
+  
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
