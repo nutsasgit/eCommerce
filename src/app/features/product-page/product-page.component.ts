@@ -34,7 +34,7 @@ export class ProductPageComponent implements OnInit {
 
     
     if (this.sort === 'low') params['sort'] = 'price';
-    else if (this.sort === 'heigh') params['sort'] = '-price';
+    else if (this.sort === 'height') params['sort'] = '-price';
     else params['sort'] = 'created_at';
 
     this.http

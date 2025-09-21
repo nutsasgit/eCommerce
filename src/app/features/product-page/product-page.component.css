@@ -2,7 +2,7 @@
 .firstNavContainer, .secondNavContainer{
     width: 1920px;
     height: 50x;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: flex;
     gap: 1400px;
 }
@@ -52,7 +52,7 @@
     width: 40px;
     height: 40px;
     border-radius: 30px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
    
 }
 .cartIcon{
@@ -69,7 +69,7 @@
 .mainContainer{
     width: 1920px;
     height: auto;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,7 @@
 .filterMainContainer{
     width: 1720px;
     height: 40px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin-top: 50px;
     display: flex;
   
@@ -93,7 +93,7 @@
 .filterInfoContainer{
     width: 350px;
     height: 24px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: flex;
     align-items: center;
     gap: 20px;
@@ -137,7 +137,7 @@
 .productMainContainer{
     width: 1720px;
     height: 1900px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
