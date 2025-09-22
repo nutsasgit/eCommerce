@@ -39,20 +39,31 @@
             </div>
             <div class="otherDetails">
                 <div class="colorDiv">
-                    <div class="colorName">Color:</div>
+                    <div class="colorName">Color: {{ selectedColor }}</div>
                     <div class="colorTemplates">
-                        <div class="colorbox"></div>
+                        <div class="colorbox"*ngFor="let color of product?.available_colors"
+                            [style.backgroundColor]="color.toLowerCase()"
+                            (click)="selectColor(color)"
+                            [class.selected]="color === selectedColor">
+                        </div>
                     </div>
                 </div>
                 <div class="sizeDiv">
-                    <div class="sizeName">Size:</div>
+                    <div class="sizeName">Size: {{ selectedSize }}</div>
                     <div class="sizeList">
-                        <div class="sizeBox"></div>
+                        <div class="sizeBox"
+                            *ngFor="let size of product?.available_sizes"
+                            (click)="selectSize(size)"
+                            [class.selected]="size === selectedSize">
+                            {{ size }}
+                        </div>
                     </div>
                 </div>
                 <div class="quantityDiv">
                     <div class="quantity">Quantity</div>
-                    <div class="quantitybox"></div>
+                    <select [(ngModel)]="quantity" class="quantitybox">
+                        <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
+                    </select>
                 </div>
             </div>
             <div class="addButton"><i class="bi bi-cart3"></i>Add to Card</div>
@@ -63,7 +74,7 @@
                     <div class="brandname">Brand:</div>
                     <div class="logoDiv"></div>
                 </div>
-                <div class="productDescription"></div>
+                <div class="productDescription">{{ product?.description }}</div>
             </div>
          </div>
     </div>
