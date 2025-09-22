@@ -77,16 +77,15 @@
 </div>
 
 <div class="pagination">
-  <!-- Previous arrow -->
-  <a (click)="changePage(actualPage - 1)" [class.disabled]="actualPage === 1">&lt;</a>
+   <a (click)="changePage(actualPage - 1)" [class.disabled]="actualPage === 1">&lt;</a>
 
-  <!-- Page numbers with ellipses -->
+  
   <ng-container *ngFor="let p of visiblePages">
     <a *ngIf="isNumber(p)" (click)="changePage(p)" [class.active]="actualPage === p">{{ p }}</a>
     <span *ngIf="!isNumber(p)">...</span>
   </ng-container>
 
-  <!-- Next arrow -->
+
   <a (click)="changePage(actualPage + 1)" [class.disabled]="actualPage === totalPages">&gt;</a>
 </div>
 
