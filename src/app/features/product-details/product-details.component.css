@@ -124,6 +124,7 @@ p{
     font-weight: 700;
     font-size: 25px;
     margin-left: 10px;
+    text-transform: capitalize;
 }
 .productPrice{
     font-weight: 700;
@@ -158,6 +159,14 @@ p{
     height: 25px;
     border-radius: 5px;
     border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sizeBox:hover {
+    background-color: #f3e2e2; 
+    border-color: #c6ced8; 
+    transform: scale(1.05); 
 }
 .quantityDiv{
     margin-top: 40px;
