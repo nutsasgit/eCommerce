@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-product-details',
@@ -97,6 +98,13 @@ export class ProductDetailsComponent implements OnInit {
   }
   Openpopup(){
     this.dialog.open(PopupComponent, {
+      width: '400px',
+      height: '680px',
+      panelClass: "popupStyle"
+    })
+  }
+  Openpopup2(){
+    this.dialog.open(CartComponent, {
       width: '400px',
       height: '680px',
       panelClass: "popupStyle"

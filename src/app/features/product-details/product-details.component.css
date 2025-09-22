@@ -188,6 +188,7 @@ p{
     justify-content: center;
     align-items: center;
     color: wheat;
+    cursor: pointer !important;
 }
 .bi-cart3{
     margin-right: 10px;

@@ -1,0 +1,100 @@
+.shoppingCard1Main{
+    margin-top: -20px;
+}
+.card1TitleLine{
+    font-size: 20px;
+    display: flex;
+    gap: 130px;
+}
+.button{
+    width: 200px;
+    height: 40px;
+    margin-top: 50px;
+    margin-left: 80px;
+    background-color: orangered;
+    border-radius: 5px;
+    border: none;
+}
+.productListContainer{
+    width: 350px;
+    height: 110px;
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+.coverImageContainer{
+    border: 2px solid rgb(175, 170, 170);
+    border-radius: 8px;
+    width: 100px;
+    height: 110px;
+}
+.detailsContainer{
+    width: 250px;
+    height: 110px;
+    border: 1px solid black;
+}
+.titleContainer{
+    width: 250px;
+    height: 70px;
+    border: 1px solid black;
+    display: flex;
+}
+.tileColorSize{
+    width: 200px;
+    height: 70px;
+    font-size: 13px;
+    font-weight: 500px;
+
+}
+.prise{
+    width: 50px;
+    height: 70px;
+    font-size: 18px;
+}
+.name{
+    height: 20px;
+    font-size: 18px;
+}
+.color{
+    height: 20px;
+}
+.size{
+    height: 20px;
+}
+.quntityAndRemove{
+    display: flex;
+    justify-content: space-between;
+}
+.quantity{
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+    border: 2px solid rgb(187, 184, 184);
+    border-radius: 15px;
+}
+.remove{
+    font-size: 15px;
+    color: gray;
+    
+}
+.checkoutInformation{
+    font-size: 15px;
+    margin-top: 300px;
+}
+.subtotalContainer, .delivery, .sumTotal{
+    display: flex;
+    justify-content: space-between;
+}
+.card1Button{
+    width: 300px;
+    height: 40px;
+    background-color: orangered;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-left: 40px;
+}

@@ -1,1 +1,47 @@
-<p>cart works!</p>
+<div mat-dialog-title class="shoppingCard1Main">
+    <div class="card1TitleLine">
+        <div class="card1Title">Shopping card (0)</div>
+        <div (click)="closepopup()" mat-raised-button class="card1Close">X</div>
+    </div>
+    <div>
+        <div class="productListContainer">
+            <div class="coverImageContainer"></div>
+            <div class="detailsContainer">
+                <div class="titleContainer">
+                    <div class="tileColorSize">
+                        <div class="name"></div>
+                        <div class="color">Color: </div>
+                        <div class="size"></div>
+                    </div>
+                    <div class="prise">$</div>  
+                </div>
+                <div class="quntityAndRemove">
+                    <div class="quantity">
+                        <div class="decrieseButt">-</div>
+                        <div class="quantityNumber">1</div>
+                        <div class="increaseButt">+</div>
+                    </div>
+                    <div class="remove">Remove</div>
+                </div>
+            </div>
+        </div>
+    <div>
+    <div class="checkoutInformation">
+        <div class="subtotalContainer">
+            <div class="itemsSubtotal">Items Subtotal</div>
+            <div class="subtotalPrice">$</div>
+        </div>
+        <div class="delivery">
+            <div class="del">Delivery</div>
+            <div class="delPrice">$ 5</div>
+        </div>
+        <div class="sumTotal">
+            <div class="total">Total</div>
+            <div class="totalPrice">$</div>
+        </div>
+    </div>
+    
+    <button  class="card1Button">Go to Checkout</button>
+    
+
+</div>
