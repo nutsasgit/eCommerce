@@ -1,1 +1,15 @@
-<p>popup works!</p>
+<div mat-dialog-title class="shoppingCard0Main">
+    <div class="card0TitleLine">
+        <div class="card0Title">Shopping card (0)</div>
+        <div (click) = "closepopup()" mat-raised-button class="card0Close">X</div>
+    </div>
+    <div class="card0Image"><img src="nav/purchase.png" alt="cart"></div>
+    <div class="card0Notification">
+        <div class="ups">Ooops!</div>
+        <div class="note">You have got nothing in your card just yet...</div>
+    </div>
+    
+    <button (click)="redirectToProducts()" class="card0Button">Start Shopping</button>
+    
+
+</div>

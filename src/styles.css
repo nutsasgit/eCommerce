@@ -5,3 +5,12 @@
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.popupStyle .mat-mdc-dialog-surface {
+      background-color: white;
+      border-radius: 0 !important;
+      margin-left: 490px;
+}
+.card0Close {
+  cursor: pointer !important;
+}
