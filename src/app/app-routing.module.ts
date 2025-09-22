@@ -11,7 +11,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "listing",
+    path: "product",
     component: ProductPageComponent
   },
   {
@@ -19,9 +19,10 @@ const routes: Routes = [
     component: CartComponent
   },
   {
-    path: "details",
+    path: "product/:id",
     component: ProductDetailsComponent
-  }   
+  },
+  { path: '', redirectTo: '/product', pathMatch: 'full' }
    
 ];
 

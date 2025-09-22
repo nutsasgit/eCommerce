@@ -25,28 +25,45 @@
 <div class="mainContainer">
     <div class="productMainContainer">
         <div class="imagesColumn">
-            <div class="imageCard"><img src="" alt=""></div>
+            <div class="imageCard" *ngFor="let img of images" (click)="changeImage(img)">
+                <img [src]="img" alt="{{ product?.name }}">
+            </div>
         </div>
         <div class="mainImageCard">
-            <img src="" alt="">
+            <img [src]="selectedImage" alt="{{ product?.name }}">
         </div>
         <div class="detailsMainContainer">
             <div class="tileAndPrice">
-                <div class="productTitle"></div>
-                <div class="productPrice"></div>
+                <div class="productTitle">Product Title</div>
+                <div class="productPrice">$ 20</div>
             </div>
             <div class="otherDetails">
-                <div class="colorDiv"></div>
-                <div class="sizeDiv"></div>
-                <div class="quantityDiv"></div>
+                <div class="colorDiv">
+                    <div class="colorName">Color:</div>
+                    <div class="colorTemplates">
+                        <div class="colorbox"></div>
+                    </div>
+                </div>
+                <div class="sizeDiv">
+                    <div class="sizeName">Size:</div>
+                    <div class="sizeList">
+                        <div class="sizeBox"></div>
+                    </div>
+                </div>
+                <div class="quantityDiv">
+                    <div class="quantity">Quantity</div>
+                    <div class="quantitybox"></div>
+                </div>
             </div>
-            <div class="addButton"></div>
+            <div class="addButton"><i class="bi bi-cart3"></i>Add to Card</div>
+            <div class="lineDiv"></div>
             <div class="textDetails">
+                <div class="details">Details</div>
                 <div class="brand">
-                    <div class="brandname"></div>
+                    <div class="brandname">Brand:</div>
                     <div class="logoDiv"></div>
                 </div>
-                <div class="productText"></div>
+                <div class="productDescription"></div>
             </div>
          </div>
     </div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-product-page',
@@ -25,7 +28,7 @@ export class ProductPageComponent implements OnInit {
   showingFrom: number = 0;
   showingTo: number = 0;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -133,6 +136,10 @@ export class ProductPageComponent implements OnInit {
    */
   isNumber(value: number | string): value is number {
     return typeof value === 'number';
+  }
+
+  goToDetails(id: number): void {
+    this.router.navigate(['/product', id]); // ✅ navigate with product id
   }
 }
 

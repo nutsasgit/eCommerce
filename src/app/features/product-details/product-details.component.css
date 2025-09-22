@@ -71,7 +71,7 @@ p{
     width: 1920px;
     height: 800px;
     margin-top: 30px;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
     display: flex;
     justify-content: center;  
 }
@@ -79,20 +79,39 @@ p{
 .productMainContainer{
     width: 1720px;
     height: 800px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: flex;
     
 }
 .imagesColumn{
     width: 200px;
     height: 700px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+}
+.imageCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.imageCard img{
+    width: 150px;
+    height: 160px;
 }
 .mainImageCard{
     width: 700px;
     height: 800px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainImageCard img{
+    width: 600px;
+    height: 750px;
+    padding-top: 5px;
 }
 .detailsMainContainer{
     width: 700px;
@@ -101,4 +120,85 @@ p{
     margin-left: 84px;
 }
 
-
+.productTitle{
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.productPrice{
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.otherDetails{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.colorTemplates{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.colorbox{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+.sizeDiv{
+    margin-top: 30px;
+}
+.sizeList{
+    display: flex;
+    gap: 10px;
+}
+.sizeBox{
+    margin-top: 10px;
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.quantityDiv{
+    margin-top: 40px;
+}
+.quantitybox{
+    margin-top: 10px;
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.addButton{
+    margin-top: 50px;
+    width: 700px;
+    height: 40px;
+    background-color: orangered;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+}
+.bi-cart3{
+    margin-right: 10px;
+    
+}
+.lineDiv{
+    width: 700px;
+    border: 1px solid rgb(190, 188, 188);
+    margin-top: 40px;
+}
+.details{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: 700px;
+}
+.brandname{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.productDescription{
+    margin-top: 20px;
+    margin-left: 10px;
+}
