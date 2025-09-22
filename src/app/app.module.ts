@@ -9,6 +9,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './features/product-details/product-details.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { PopupComponent } from './features/popup/popup.component';
+
 
 
 @NgModule({
@@ -17,14 +20,16 @@ import { ProductDetailsComponent } from './features/product-details/product-deta
     LoginComponent,
     ProductPageComponent,
     CartComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxPaginationModule,
-    FormsModule
-  
+    FormsModule,
+    MatDialogModule
+    
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { LoginComponent } from './features/login/login.component';
 import { ProductPageComponent } from './features/product-page/product-page.component';
 import { CartComponent } from './features/cart/cart.component';
 import { ProductDetailsComponent } from './features/product-details/product-details.component';
+import { PopupComponent } from './features/popup/popup.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,12 @@ const routes: Routes = [
     path: "product/:id",
     component: ProductDetailsComponent
   },
-  { path: '', redirectTo: '/product', pathMatch: 'full' }
+  { path: '', redirectTo: '/product', pathMatch: 'full' },
+  {
+    path: "cart",
+    component: PopupComponent
+  }
+
    
 ];
 
