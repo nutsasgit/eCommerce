@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './features/product-details/product-details.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { PopupComponent } from './features/popup/popup.component';
+import { CardPopupComponent } from './features/card-popup/card-popup.component';
 
 
 
@@ -21,7 +22,8 @@ import { PopupComponent } from './features/popup/popup.component';
     ProductPageComponent,
     CartComponent,
     ProductDetailsComponent,
-    PopupComponent
+    PopupComponent,
+    CardPopupComponent
   ],
   imports: [
     BrowserModule,
