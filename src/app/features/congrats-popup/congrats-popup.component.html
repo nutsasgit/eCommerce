@@ -1,3 +1,9 @@
-<div class="congratsMainContainer">
-    
+<div class="congratsMainContainer" mat-dialog-title>
+    <div (click)="closeCongratsPopp()" class="closeDiv">X</div>
+    <div class="notificationDIv">
+        <div class="iconDiv"><i class="bi bi-check-lg"></i></div>
+        <div class="congrats">Congrats!</div>
+        <div class="notification">Your Order is placed successfully.</div>
+    </div>
+    <button mat-dialog-button>Continue Shopping</button>
 </div>

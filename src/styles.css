@@ -17,3 +17,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .card1Close {
   cursor: pointer !important;
 }
+.congratsPopupStyle .mat-mdc-dialog-surface{
+  border-radius: 0 !important;
+  width: 1000px !important;
+  height: 500px !important;
+}

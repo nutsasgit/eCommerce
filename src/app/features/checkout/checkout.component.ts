@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
-import { MatDialog} from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { CongratsPopupComponent } from '../congrats-popup/congrats-popup.component';
 
 @Component({
   selector: 'app-checkout',
@@ -21,7 +22,7 @@ export class CheckoutComponent {
   items: any[] = [];
  subtotal: number = 0;
  
-constructor(private router: Router, private cartService: CartService){}
+constructor(private router: Router, private cartService: CartService, private dialog:MatDialog ){}
 
   pay(){
     this.firstName === "" ||
@@ -56,8 +57,11 @@ remove(item: any) {
   this.cartService.removeItem(item);
   this.loadCart();
 }
+ openCongratsPopup(){
+    this.dialog.open(CongratsPopupComponent,{
+      
+      panelClass: "congratsPopupStyle",
 
-
-
-
+    })
+  }
 }
