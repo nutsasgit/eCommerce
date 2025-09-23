@@ -1,69 +1,3 @@
-.secondNavContainer{
-    width: 1920px;
-    height: 50x;
-    /*border: 1px solid black;*/
-    display: flex;
-    gap: 1400px;
-}
-.logoContainer{
-    display: flex;
-    gap: 6px;
-    margin-left: 100px;
-    margin-top: 20px;
-
-}
-.logo img{
-    width: 20px;
-    height: 20px;
-
-}
-.title{
-    width: 200px;
-    height: 20px;
-    font-size: 15px;
-    font-weight: bolder;
-}
-.loginContainer{
-    display: flex;
-    gap: 6px;
-    margin-top: 20px;
-}
-.userIcon{
-    width: 15px;
-    height: 15px;
-}
-.userIcon img{
-    width: 15px;
-    height: 15px;
-}
-.secondNavContainer{
-    margin-top: 10px;
-
-}
-.logedInContainer{
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-
-}
-
-.userImage img{
-    width: 40px;
-    height: 40px;
-    border-radius: 30px;
-    /*border: 1px solid black;*/
-   
-}
-.cartIcon{
-    width: 30px;
-    height: 30px;
-    padding-top: 5px;
-}
-.dropDown{
-    width: 20px;
-    font-weight: 500;
-}
-
 p{
     margin-left: 100px;
 }
@@ -116,7 +50,7 @@ p{
 .detailsMainContainer{
     width: 700px;
     height: 800px;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
     margin-left: 84px;
 }
 
@@ -180,7 +114,7 @@ p{
 }
 .addButton{
     margin-top: 50px;
-    width: 700px;
+    width: 500px;
     height: 40px;
     background-color: orangered;
     border-radius: 5px;
@@ -195,7 +129,7 @@ p{
     
 }
 .lineDiv{
-    width: 700px;
+    width: 500px;
     border: 1px solid rgb(190, 188, 188);
     margin-top: 40px;
 }
