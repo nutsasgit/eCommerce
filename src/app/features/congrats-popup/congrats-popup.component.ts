@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig  } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-congrats-popup',
@@ -11,11 +13,22 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class CongratsPopupComponent {
 
-constructor(private route: ActivatedRoute, private dialog:MatDialog, private ref:MatDialogRef<CongratsPopupComponent>){}
+constructor(private cartService: CartService, private route: ActivatedRoute, private dialog:MatDialog, private router: Router, private ref:MatDialogRef<CongratsPopupComponent>){}
 
 closeCongratsPopp(){
   this.ref.close()
+  this.router.navigate(['/product']);
+
 }
+
+redirectCongratsToProducts(){
+  this.ref.close();
+  this.router.navigate(['/product']);
+  this.cartService.clearCart();
+}
+  
+  
+  
 
  
 }
