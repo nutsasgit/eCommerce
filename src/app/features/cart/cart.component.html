@@ -6,7 +6,7 @@
     <div>
         <div class="productListContainer"*ngFor="let item of items">
             <div class="coverImageContainer">
-                
+                <img [src]="item.image" alt="#" id = "image">
             </div>
             <div class="detailsContainer">
                 <div class="titleContainer">
@@ -30,8 +30,8 @@
     <div>
     <div class="checkoutInformation">
         <div class="subtotalContainer">
-            <div class="itemsSubtotal" >{{ subtotal }}Items Subtotal</div>
-            <div class="subtotalPrice">$</div>
+            <div class="itemsSubtotal" >Items Subtotal</div>
+            <div class="subtotalPrice">$ {{ subtotal }}</div>
         </div>
         <div class="delivery">
             <div class="del">Delivery</div>

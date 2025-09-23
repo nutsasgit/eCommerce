@@ -21,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   selectedSize: string = '';
   quantity: number = 1;
   quantities: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
+  
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private dialog:MatDialog, private cartService: CartService) {}
 
@@ -91,29 +92,35 @@ export class ProductDetailsComponent implements OnInit {
       size: this.selectedSize,
       quantity: this.quantity,
       price: this.product.price,
-      total: this.product.price * this.quantity
+      total: this.product.price * this.quantity,
+      image: this.selectedImage
     };
     this.cartService.addToCart(cartItem);
-    console.log('Add to cart:', cartItem);
+    
  
   }
   clearCart() {
   this.cartService.clearCart();
-  console.log('Cart cleared');
+  
 }
-  Openpopup(){
-    this.dialog.open(PopupComponent, {
-      width: '400px',
-      height: '680px',
-      panelClass: "popupStyle"
-    })
-  }
-  Openpopup2(){
-    this.dialog.open(CartComponent, {
-      width: '400px',
-      height: '680px',
-      panelClass: "popupStyle"
-    })
+
+
+Openpopup(): void {
+    const items = this.cartService.getItems(); 
+    if (!items || items.length === 0) {
+      this.dialog.open(PopupComponent, {
+        width: '400px',
+        height: '680px',
+        panelClass: 'popupStyle'
+      });
+    } else {
+      this.dialog.open(CartComponent, {
+        width: '400px',
+        height: '680px',
+        panelClass: 'popupStyle',
+        data: { items }
+      });
+    }
   }
 }
 
