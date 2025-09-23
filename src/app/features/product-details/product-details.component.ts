@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { CartComponent } from '../cart/cart.component';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -21,7 +22,7 @@ export class ProductDetailsComponent implements OnInit {
   quantity: number = 1;
   quantities: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private dialog:MatDialog) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient, private dialog:MatDialog, private cartService: CartService) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -92,10 +93,14 @@ export class ProductDetailsComponent implements OnInit {
       price: this.product.price,
       total: this.product.price * this.quantity
     };
-
+    this.cartService.addToCart(cartItem);
     console.log('Add to cart:', cartItem);
  
   }
+  clearCart() {
+  this.cartService.clearCart();
+  console.log('Cart cleared');
+}
   Openpopup(){
     this.dialog.open(PopupComponent, {
       width: '400px',

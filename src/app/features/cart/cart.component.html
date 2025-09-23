@@ -1,34 +1,36 @@
 <div mat-dialog-title class="shoppingCard1Main">
     <div class="card1TitleLine">
-        <div class="card1Title">Shopping card (0)</div>
+        <div class="card1Title">Shopping card ({{ items.length }})</div>
         <div (click)="closepopup()" mat-raised-button class="card1Close">X</div>
     </div>
     <div>
-        <div class="productListContainer">
-            <div class="coverImageContainer"></div>
+        <div class="productListContainer"*ngFor="let item of items">
+            <div class="coverImageContainer">
+                
+            </div>
             <div class="detailsContainer">
                 <div class="titleContainer">
                     <div class="tileColorSize">
-                        <div class="name"></div>
-                        <div class="color">Color: </div>
-                        <div class="size"></div>
+                        <div class="name">{{ item.name }}</div>
+                        <div class="color">Color: {{ item.color }} </div>
+                        <div class="size">{{ item.size }}</div>
                     </div>
-                    <div class="prise">$</div>  
+                    <div class="prise">$ {{ item.total }}</div>  
                 </div>
                 <div class="quntityAndRemove">
                     <div class="quantity">
-                        <div class="decrieseButt">-</div>
-                        <div class="quantityNumber">1</div>
-                        <div class="increaseButt">+</div>
+                        <div class="decrieseButt" (click)="decrease(item)">-</div>
+                        <div class="quantityNumber">{{ item.quantity }}</div>
+                        <div class="increaseButt" (click)="increase(item)">+</div>
                     </div>
-                    <div class="remove">Remove</div>
+                    <div class="remove" (click)="remove(item)">Remove</div>
                 </div>
             </div>
         </div>
     <div>
     <div class="checkoutInformation">
         <div class="subtotalContainer">
-            <div class="itemsSubtotal">Items Subtotal</div>
+            <div class="itemsSubtotal" >{{ subtotal }}Items Subtotal</div>
             <div class="subtotalPrice">$</div>
         </div>
         <div class="delivery">
@@ -37,7 +39,7 @@
         </div>
         <div class="sumTotal">
             <div class="total">Total</div>
-            <div class="totalPrice">$</div>
+            <div class="totalPrice">$ {{ subtotal + 5 }}</div>
         </div>
     </div>
     

@@ -29,6 +29,10 @@
     width: 100px;
     height: 110px;
 }
+.coverImageContainer img{
+    width: 10px;
+    height: 10px;
+}
 .detailsContainer{
     width: 250px;
     height: 110px;
