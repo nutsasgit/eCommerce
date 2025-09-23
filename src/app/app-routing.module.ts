@@ -7,6 +7,7 @@ import { ProductDetailsComponent } from './features/product-details/product-deta
 import { PopupComponent } from './features/popup/popup.component';
 import { CheckoutComponent } from './features/checkout/checkout.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { CongratsPopupComponent } from './features/congrats-popup/congrats-popup.component';
 
 
 
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: "navbar",
     component: NavbarComponent
+  },
+  {
+    path: "congrats",
+    component: CongratsPopupComponent
   }
   
 ];

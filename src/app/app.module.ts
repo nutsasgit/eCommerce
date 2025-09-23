@@ -13,6 +13,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import { PopupComponent } from './features/popup/popup.component';
 import { CheckoutComponent } from './features/checkout/checkout.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { CongratsPopupComponent } from './features/congrats-popup/congrats-popup.component';
 
 
 
@@ -27,6 +28,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     PopupComponent,
     CheckoutComponent,
     NavbarComponent,
+    CongratsPopupComponent,
     
     
   ],
