@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './features/product-details/product-details.component';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { PopupComponent } from './features/popup/popup.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutComponent } from './features/checkout/checkout.component';
 
 
 
@@ -25,6 +25,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ProductDetailsComponent,
     PopupComponent,
     CheckoutComponent,
+    
     
   ],
   imports: [

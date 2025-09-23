@@ -5,7 +5,8 @@ import { ProductPageComponent } from './features/product-page/product-page.compo
 import { CartComponent } from './features/cart/cart.component';
 import { ProductDetailsComponent } from './features/product-details/product-details.component';
 import { PopupComponent } from './features/popup/popup.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutComponent } from './features/checkout/checkout.component';
+
 
 
 const routes: Routes = [
@@ -30,11 +31,11 @@ const routes: Routes = [
     path: "cart",
     component: PopupComponent
   },
-  { path: "checkout",
+  {
+    path: "checkout",
     component: CheckoutComponent
   }
-
-    
+  
 ];
 
 @NgModule({
