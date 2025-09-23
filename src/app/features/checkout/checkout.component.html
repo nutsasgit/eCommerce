@@ -1,1 +1,61 @@
-<p>checkout works!</p>
+<div class="checkoutMainContainer">
+    <div class="contactDetailsContainer">
+       <div class="contactMainContainer">
+            <div class="orderDetails">Order Details</div>
+            <div class="orderContainer">
+                <div class="nameDiv">
+                    <div class="firstNameDiv"><input type="text" placeholder="Name" [(ngModel)]="firstName"></div>
+                    <div class="lastNameDiv"><input type="text" placeholder="Surname" [(ngModel)]="lastName"></div>
+                </div>
+                <div class="mailDiv"><input tyle = "text" placeholder="&#9993; Email" [(ngModel)]="eMail"></div>
+                <div class="addressDiv">
+                    <div class="addressField"><input type = "text" placeholder="Address" [(ngModel)]="address"></div>
+                    <div class="zipCodeField"><input type = "text" placeholder="Zip Code" [(ngModel)]="zipCode"></div>
+                </div>
+            </div>
+            
+       </div>
+       <div class="productDetailsContainer">
+            <div class="productListContainer" *ngFor="let item of items">
+                <div class="coverImageContainer">
+                    <img [src]="item.image" alt="#" id = "image">
+                </div>
+                <div class="detailsContainer">
+                    <div class="titleContainer">
+                        <div class="tileColorSize">
+                            <div class="name">{{ item.name }}</div>
+                            <div class="color">Color: {{ item.color }} </div>
+                            <div class="size">{{ item.size }}</div>
+                        </div>
+                        <div class="prise">$ {{ item.total }}</div>  
+                    </div>
+                <div class="quntityAndRemove">
+                    <div class="quantity">
+                        <div class="decrieseButt" (click)="decrease(item)">-</div>
+                        <div class="quantityNumber">{{ item.quantity }}</div>
+                        <div class="increaseButt" (click)="increase(item)">+</div>
+                    </div>
+                    <div class="remove" (click)="remove(item)">Remove</div>
+                </div>
+                </div>
+            </div>
+        
+       <div class="checkoutInformation">
+            <div class="subtotalContainer">
+                <div class="itemsSubtotal" >Items Subtotal</div>
+                <div class="subtotalPrice">$ {{ subtotal }}</div>
+            </div>
+            <div class="delivery">
+                <div class="del">Delivery</div>
+                <div class="delPrice">$ 5</div>
+            </div>
+            <div class="sumTotal">
+                <div class="total">Total</div>
+                <div class="totalPrice">$ {{ subtotal + 5 }}</div>
+            </div>
+            <div class="payment"><button>Pay</button></div>
+        </div>
+       
+    </div>
+    </div>
+</div>
