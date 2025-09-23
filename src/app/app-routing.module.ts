@@ -6,6 +6,7 @@ import { CartComponent } from './features/cart/cart.component';
 import { ProductDetailsComponent } from './features/product-details/product-details.component';
 import { PopupComponent } from './features/popup/popup.component';
 import { CheckoutComponent } from './features/checkout/checkout.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 
 
 
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: "checkout",
     component: CheckoutComponent
+  },
+  {
+    path: "navbar",
+    component: NavbarComponent
   }
   
 ];

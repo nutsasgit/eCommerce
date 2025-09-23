@@ -12,6 +12,7 @@ import { ProductDetailsComponent } from './features/product-details/product-deta
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { PopupComponent } from './features/popup/popup.component';
 import { CheckoutComponent } from './features/checkout/checkout.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 
 
 
@@ -25,6 +26,7 @@ import { CheckoutComponent } from './features/checkout/checkout.component';
     ProductDetailsComponent,
     PopupComponent,
     CheckoutComponent,
+    NavbarComponent,
     
     
   ],
