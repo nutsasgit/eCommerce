@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +14,7 @@ export class CartComponent {
 items: any[] = [];
 subtotal: number = 0;
 
-constructor(private cartService: CartService, private ref:MatDialogRef<CartComponent>){}
+constructor(private router: Router, private cartService: CartService, private ref:MatDialogRef<CartComponent>){}
 
 closepopup(){
   this.ref.close()
@@ -39,5 +41,9 @@ decrease(item: any) {
 remove(item: any) {
   this.cartService.removeItem(item);
   this.loadCart();
+}
+goToCheckout(): void {
+  this.router.navigate(['/checkout']);
+  this.ref.close();
 }
 }
