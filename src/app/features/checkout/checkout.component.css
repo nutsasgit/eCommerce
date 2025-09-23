@@ -1,0 +1,169 @@
+.checkoutMainContainer{
+    width: 1920px;
+    height: 800px;
+    /*border: 1px solid black;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactDetailsContainer{
+    width: 1720px;
+    height: 600px;
+    /*border: 1px solid black;*/
+    display: flex;
+    gap: 80px;
+}
+.contactMainContainer{
+    width: 1000px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: #f2eef1;
+}
+.productDetailsContainer{
+    width: 400px;
+    height: 600px;
+   /* border: 1px solid black;*/
+}
+
+.orderDetails{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.orderContainer{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.nameDiv{
+    display: flex;
+    gap: 30px;
+    
+}
+.nameDiv input{
+    width: 270px;
+    height: 40px;
+    border: 1px solid rgb(107, 105, 105);
+    border-radius: 8px;
+    padding-left: 10px;
+    
+}
+
+.mailDiv{
+    margin-top: 30px;
+}
+.mailDiv input {
+    width: 570px;
+    height: 40px;
+    border: 1px solid rgb(107, 105, 105);
+    border-radius: 8px;
+    padding-left: 10px;
+}
+
+.addressDiv{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+.addressDiv input{
+    width: 270px;
+    height: 40px;
+    border: 1px solid rgb(107, 105, 105);
+    border-radius: 8px;
+    padding-left: 10px;
+}
+
+
+.productListContainer{
+    width: 400px;
+    height: 110px;
+    /*border: 1px solid black;*/
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+.coverImageContainer{
+    border: 2px solid rgb(175, 170, 170);
+    border-radius: 8px;
+    width: 100px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#image{
+    width: 60px;
+    height: auto; 
+    object-fit: cover;
+}
+.detailsContainer{
+    width: 250px;
+    height: 110px;
+    /*border: 1px solid black;*/
+}
+.titleContainer{
+    width: 250px;
+    height: 70px;
+    /*border: 1px solid black;*/
+    display: flex;
+}
+.tileColorSize{
+    width: 200px;
+    height: 70px;
+    font-size: 13px;
+    font-weight: 500px;
+}
+.prise{
+    width: 50px;
+    height: 70px;
+    font-size: 15px;
+}
+.name{
+    height: 20px;
+    font-size: 15px;
+    text-transform: capitalize;
+
+}
+.color{
+    height: 20px;
+}
+.size{
+    height: 20px;
+}
+.quntityAndRemove{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.quantity{
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    gap: 10px;
+    border: 2px solid rgb(187, 184, 184);
+    border-radius: 15px;
+}
+.remove{
+    font-size: 12px;
+    color: gray;
+    cursor: pointer;
+    
+}
+.checkoutInformation{
+    font-size: 15px;
+    margin-top: 300px;
+}
+.subtotalContainer, .delivery, .sumTotal{
+    display: flex;
+    justify-content: space-between;
+}
+.payment button{
+    width: 400px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
