@@ -25,10 +25,5 @@ redirectCongratsToProducts(){
   this.ref.close();
   this.router.navigate(['/product']);
   this.cartService.clearCart();
-}
-  
-  
-  
-
- 
+} 
 }

@@ -29,3 +29,90 @@
     gap: 6px;
     margin-top: 20px;
 }
+
+
+/* Main Container*/
+.pageMainContainer{
+    width: 1920px;
+    height: 800px;
+    border: 1px solid black;
+    display: flex;
+    gap: 40px;
+}
+.pageImageContainer{
+    width: 800px;
+    height: 800px;
+}
+.pageImageContainer img{
+    width: 800px;
+    height: 800px;
+}
+
+.registrationAndLoginContainer{
+    width: 900px;
+    height: 800px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registrationContainer{
+    height: 600px;
+    width: 550px;
+    border: 1px solid black;
+}
+.regTitle{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.profileImageCOntainer{
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+.profileImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+.profileImage img{
+    width: 60px;
+    height: 60px;
+
+}
+.uploadNew{
+    padding-top: 20px;
+}
+.imageRemove{
+    padding-top: 20px;
+}
+.fields input{
+    width: 450px;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 30px;
+    
+}
+.loginQuention{
+    display: flex;
+}
+.registerButton{
+    width: 465px;
+    height: 40px;
+    background-color: orangered;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+.loginQuestion{
+    margin-top: 30px;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.logInRedirect{
+    color: orangered;
+}
