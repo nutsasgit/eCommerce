@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-login',
   standalone: false,
@@ -16,6 +17,10 @@ export class LoginComponent {
   confirmPassword: string = '';
   avatar: File | null = null;
   avatarPreview: string | ArrayBuffer | null = '/profileImage.png';
+
+  loginEmail: string = '';
+  loginPassword: string = '';
+  isLoginMode: boolean = false; 
 
   showPassword = false;
   showConfirmPassword = false;
@@ -63,7 +68,7 @@ export class LoginComponent {
       next: (response) => {
         console.log('registration successful:', response);
         localStorage.setItem('token', response.token);
-         this.router.navigate(['/product']);
+        this.router.navigate(['/product']);
       },
       error:(err)=>{
         if (err.status === 422){
@@ -75,11 +80,36 @@ export class LoginComponent {
         
       }
     });
-
-
-    
+ 
+  }
+  onLogin(){
+    const body = {
+      email: this.loginEmail,
+      password: this.loginPassword
+    };
+    const headers = new HttpHeaders({ 'Accept': 'application/json' });
+    this.http.post<{token: string}>('https://api.redseam.redberryinternship.ge/api/login', body, { headers })
+      .subscribe({
+        next: (response) => {
+          console.log('login successful:', response);
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/product']); // redirect to product page
+        },
+        error: (err) => {
+          console.error("Login error:", err.error);
+          alert("Login failed. Check email and password.");
+        }
+      });
+   
+     
+  }
+switchToLogin(){
+    this.isLoginMode = true;
   }
 
+  switchToRegister(){
+    this.isLoginMode = false;
+  }
 
 }
 
