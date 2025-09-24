@@ -24,7 +24,7 @@
 .registrationContainer{
     height: 600px;
     width: 550px;
-    border: 1px solid black;
+    
 }
 .regTitle{
     font-size: 25px;
@@ -117,7 +117,7 @@
 .loginContainer{
     width: 550px;
     height: 500px;
-    border: 1px solid black;
+    
 }
 .loginContainer .loginTitle{
     font-weight: bolder;
