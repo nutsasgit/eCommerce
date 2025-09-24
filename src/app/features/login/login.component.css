@@ -35,7 +35,6 @@
 .pageMainContainer{
     width: 1920px;
     height: 800px;
-    border: 1px solid black;
     display: flex;
     gap: 40px;
 }
@@ -51,7 +50,6 @@
 .registrationAndLoginContainer{
     width: 900px;
     height: 800px;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,11 +84,18 @@
 .imageRemove{
     padding-top: 20px;
 }
+.fields{
+    width: 500px;
+    height: 250px;
+    
+}
 .fields input{
     width: 450px;
     height: 40px;
     padding-left: 10px;
     margin-top: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
     
 }
 .loginQuention{
@@ -102,11 +107,13 @@
     background-color: orangered;
     color: white;
     border-radius: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 30px;
 }
 .loginQuestion{
-    margin-top: 30px;
+    margin-top: 150px;
     font-size: 15px;
     text-align: center;
     display: flex;
@@ -115,4 +122,23 @@
 }
 .logInRedirect{
     color: orangered;
+}
+.passwordFild{
+    position: relative;
+}
+.passwordFild .bi-eye{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    cursor: pointer;
+}
+.confirmFild{
+    position: relative;
+  
+}
+.confirmFild .bi-eye{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    cursor: pointer;
 }
