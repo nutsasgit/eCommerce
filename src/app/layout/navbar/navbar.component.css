@@ -48,10 +48,12 @@
 }
 
 .userImage img{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 30px;
     /*border: 1px solid black;*/
+    padding-top: 10px;
+    margin-right: 10px;
    
 }
 .cartIcon{
@@ -62,4 +64,12 @@
 .dropDown{
     width: 20px;
     font-weight: 500;
+}
+.userIconContainer{
+    display: flex;
+}
+.loginButton{
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }

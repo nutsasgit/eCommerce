@@ -1,45 +1,41 @@
-<!--
-<div class="firstNavContainer">
-   <div class="logoContainer">
-      <div class="logo">
-         <img src="nav/Vector.png" alt="logo">
-      </div>
-      <div class="title">RedSeam Clothing       
-      </div>
-   </div>
-   <div class="loginContainer">
-      <div class="userIcon">
-         <img src="nav/Union.png" alt="">
-      </div>
-      <div class="login">Log In       
-      </div>
-   </div>
-</div>
--->
 <div class="pageMainContainer">
    <div class="pageImageContainer">
       <img src="/pageImage.png" alt="Page Foto">
    </div>
-   <div class="registrationAndLoginContainer">
-      
-      <div class="registrationContainer">
-         <div class="regTitle">Registration</div>
-         <div class="profileImageCOntainer">
-            <div class="profileImage"><img src="/profileImage.png" alt="Profile Foto"></div>
-            <div class="uploadNew">Upload New</div>
-            <div class="imageRemove">Remove</div>
-         </div>
-         <div class="fields">
-            <div class="userNameFild"><input type="text" placeholder="Username *"></div>
-            <div class="emailFild"><input type="email" placeholder="Email *"></div>
-            <div class="passwordFild"><input type="text" placeholder="Password *"></div>
-            <div class="confirmFild"><input type="text" placeholder="Confirm Password *"></div>
-         </div>
-         <div class="registerButton">Register</div>
-         <div class="loginQuestion">
-            <div class="question">Already member?</div>
-            <div class="logInRedirect">Log in</div>
+   
+      <div class="registrationAndLoginContainer">
+           
+         <div class="registrationContainer">
+            <div class="regTitle">Registration</div>
+            <div class="profileImageCOntainer">
+               <div class="profileImage"><img [src]="avatarPreview" alt="Profile Foto"></div>
+               <div class="uploadNew" (click)="fileInput.click()" accept="image/*">Upload New</div>
+               <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+               <div class="imageRemove" (click)="removeAvatar()">Remove</div>
+            </div>
+
+            <form (ngSubmit)="onRegister()" #registerForm="ngForm" class="fields">
+               <div class="userNameFild"><input type="text" name="username"  placeholder="Username *" [(ngModel)]="username" required minlength="3"></div>
+               <div class="emailFild"><input type="email" name="email" placeholder="Email *"  [(ngModel)]="email" required email></div>
+               <div class="passwordFild">
+                  <input [type]="showPassword ? 'text' : 'password'" name="password"
+                        placeholder="Password *" [(ngModel)]="password" required minlength="3">
+                  <span class="bi bi-eye" (click)="showPassword = !showPassword"></span>
+               </div>
+               <div class="confirmFild">
+                  <input [type]="showConfirmPassword ? 'text' : 'password'"  name="confirmPassword" placeholder="Confirm Password *" [(ngModel)]="confirmPassword" required >
+                  <span><i class="bi bi-eye" (click)="showConfirmPassword = !showConfirmPassword"></i></span>
+               </div>
+            
+            <button type="submit" [disabled]="registerForm.invalid" class="registerButton">Register</button>
+
+           </form>
+           
+            <div class="loginQuestion">
+               <div class="question">Already member?</div>
+               <div class="logInRedirect">Log in</div>
+            </div>
          </div>
       </div>
-   </div>
+   
 </div>
