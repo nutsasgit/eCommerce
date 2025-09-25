@@ -79,6 +79,7 @@ export class LoginComponent {
       next: (response) => {
         console.log('registration successful:', response);
         localStorage.setItem('token', response.token);
+        localStorage.setItem('email', response.user.email);
         if (response.user?.avatar) {
           localStorage.setItem('avatar', response.user.avatar);
         }
@@ -108,6 +109,7 @@ export class LoginComponent {
           console.log('login successful:', response);
           localStorage.setItem('token', response.token);
           localStorage.setItem('avatar', response.user.avatar);
+          localStorage.setItem('email', response.user.email);
           this.router.navigate(['/product']); 
         },
         error: (err) => {

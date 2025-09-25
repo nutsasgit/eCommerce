@@ -20,7 +20,7 @@ export class CheckoutComponent {
   zipCode: string = ""
 
   items: any[] = [];
- subtotal: number = 0;
+  subtotal: number = 0;
  
 constructor(private router: Router, private cartService: CartService, private dialog:MatDialog ){}
 
@@ -36,6 +36,10 @@ constructor(private router: Router, private cartService: CartService, private di
   }
   ngOnInit() {
     this.loadCart();
+    const userEmail = localStorage.getItem('email');
+    if (userEmail) {
+      this.eMail = userEmail;
+    }
   }
 loadCart() {
     this.items = this.cartService.getItems();
@@ -57,10 +61,15 @@ remove(item: any) {
   this.cartService.removeItem(item);
   this.loadCart();
 }
- openCongratsPopup(){
+
+
+openCongratsPopup(){
+    if (!this.firstName || !this.lastName || !this.eMail || !this.address || !this.zipCode) {
+      alert("Please fill all the fields before paying.");
+      return;
+    }
     this.dialog.open(CongratsPopupComponent,{
-      
-      panelClass: "congratsPopupStyle",
+    panelClass: "congratsPopupStyle",
 
     })
   }
