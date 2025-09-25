@@ -25,47 +25,27 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient, private dialog:MatDialog, private cartService: CartService) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log('Product ID from route:', id);
+  this.route.paramMap.subscribe(params => {
+    const id = params.get('id');
+    if (id) {
+      this.loadProduct(id);
+    }
+  });
+}
 
-    if (!id) return;
-
-    this.http.get<any>('https://api.redseam.redberryinternship.ge/api/products')
-      .subscribe({
-        next: res => {
-          console.log('API response:', res);
-
-          if (res.data && res.data.length > 0) {
-            this.product = res.data.find((p: any) => p.id === +id);
-
-            if (this.product) {
-           
-              this.images = this.product.images;
-              this.selectedImage = this.images[0];
-
-             
-              if (this.product.available_colors.length > 0) {
-                this.selectedColor = this.product.available_colors[0];
-              }
-
-              
-              if (this.product.available_sizes.length > 0) {
-                this.selectedSize = this.product.available_sizes[0];
-              }else{
-                this.selectedSize = 'Unavailable';
-              }
-
-             
-            } else {
-              console.error('No product found with this ID');
-            }
-          } else {
-            console.error('No products returned from API');
-          }
-        },
-        error: err => console.error('API error:', err)
-      });
-  }
+loadProduct(id: string) {
+  this.http.get<any>(`https://api.redseam.redberryinternship.ge/api/products/${id}`)
+    .subscribe({
+      next: product => {
+        this.product = product;
+        this.images = product.images || [];
+        this.selectedImage = this.images[0] || '';
+        this.selectedColor = product.available_colors?.[0] || '';
+        this.selectedSize = product.available_sizes?.[0] || 'Unavailable';
+      },
+      error: err => console.error('API error:', err)
+    });
+}
 
   
   changeImage(img: string): void {
