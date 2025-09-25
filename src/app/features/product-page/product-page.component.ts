@@ -102,23 +102,20 @@ export class ProductPageComponent implements OnInit {
     const delta = 2;
     const range: (number | string)[] = [];
 
-    if (total <= 7) {
+    if (total <= 4) {
       return Array.from({ length: total }, (_, i) => i + 1);
     }
 
- 
-    range.push(1);
-
-    if (current - delta > 2) range.push('...');
-
-    for (let i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++) {
-      range.push(i);
+    const lastPages = [total - 1, total];
+    let start = Math.floor((current - 1) / 2) * 2 + 1;
+    if (start + 1 >= total - 2) {
+    start = total - 4;
     }
-
-    if (current + delta < total - 1) range.push('...');
-
-    range.push(total);
-
+    range.push(start, start + 1);
+    if (start + 1 < total - 2) {
+    range.push('...');
+    }
+    range.push(...lastPages);
     return range;
   }
 
