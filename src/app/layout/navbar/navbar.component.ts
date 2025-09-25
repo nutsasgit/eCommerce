@@ -21,25 +21,36 @@ userAvatar: string = 'nav/Union.png';
 constructor(private router: Router, private dialog:MatDialog, private cartService: CartService) {}
 
 ngOnInit(): void {
+    this.updateLoginState();
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.navbarType = event.url.includes('/products') ? 2 : 1;
+        this.updateLoginState();
       });
 
     
-    const token = localStorage.getItem('token');
-    const avatar = localStorage.getItem('avatar');
-    if (token) {
-      this.isLoggedIn = true;
-      this.userAvatar = avatar ? avatar : 'nav/Union.png';
-    } else {
-      this.isLoggedIn = false;
-      this.userAvatar = 'nav/Union.png';
     }
+updateLoginState(): void {
+  const token = localStorage.getItem('token');
+  const avatar = localStorage.getItem('avatar');
+  if (token) {
+    this.isLoggedIn = true;
+    this.userAvatar = avatar ? avatar : 'nav/Union.png';
+  } else {
+    this.isLoggedIn = false;
+    this.userAvatar = 'nav/Union.png';
   }
+}
 
 
+redirect(){
+  if(this.isLoggedIn){
+    this.router.navigate(['/product']);
+  }else{
+    this.router.navigate(['/login']);
+  }
+}
 
 Openpopup(): void {
     const items = this.cartService.getItems(); 
@@ -51,7 +62,7 @@ Openpopup(): void {
       });
     } else {
       this.dialog.open(CartComponent, {
-        width: '400px',
+        width: '450px',
         height: '680px',
         panelClass: 'popupStyle',
         data: { items }

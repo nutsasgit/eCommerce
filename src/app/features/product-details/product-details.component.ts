@@ -16,7 +16,6 @@ export class ProductDetailsComponent implements OnInit {
   product: any;
   images: string[] = [];
   selectedImage: string = '';
-
   selectedColor: string = '';
   selectedSize: string = '';
   quantity: number = 1;
@@ -52,6 +51,8 @@ export class ProductDetailsComponent implements OnInit {
               
               if (this.product.available_sizes.length > 0) {
                 this.selectedSize = this.product.available_sizes[0];
+              }else{
+                this.selectedSize = 'Unavailable';
               }
 
              
@@ -72,8 +73,9 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   
-  selectColor(color: string): void {
+  selectColor(color: string, index: number): void {
     this.selectedColor = color;
+    this.selectedImage = this.product.images[index];
   }
 
  

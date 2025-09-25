@@ -2,6 +2,17 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+interface User {
+  username: string;
+  email: string;
+  avatar: string;
+  id: number;
+}
+
+interface AuthResponse {
+  token: string;
+  user: User;
+}
 
 
 @Component({
@@ -63,11 +74,14 @@ export class LoginComponent {
     const headers = new HttpHeaders({
       'Accept': "application/json"
     });
-    this.http.post<{token:string}>('https://api.redseam.redberryinternship.ge/api/register',formData, {headers})
+    this.http.post<any>('https://api.redseam.redberryinternship.ge/api/register',formData, {headers})
     .subscribe({
       next: (response) => {
         console.log('registration successful:', response);
         localStorage.setItem('token', response.token);
+        if (response.user?.avatar) {
+          localStorage.setItem('avatar', response.user.avatar);
+        }
         this.router.navigate(['/product']);
       },
       error:(err)=>{
@@ -88,12 +102,13 @@ export class LoginComponent {
       password: this.loginPassword
     };
     const headers = new HttpHeaders({ 'Accept': 'application/json' });
-    this.http.post<{token: string}>('https://api.redseam.redberryinternship.ge/api/login', body, { headers })
+    this.http.post<any>('https://api.redseam.redberryinternship.ge/api/login', body, { headers })
       .subscribe({
         next: (response) => {
           console.log('login successful:', response);
           localStorage.setItem('token', response.token);
-          this.router.navigate(['/product']); // redirect to product page
+          localStorage.setItem('avatar', response.user.avatar);
+          this.router.navigate(['/product']); 
         },
         error: (err) => {
           console.error("Login error:", err.error);

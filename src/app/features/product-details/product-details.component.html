@@ -18,9 +18,9 @@
                 <div class="colorDiv">
                     <div class="colorName">Color: {{ selectedColor }}</div>
                     <div class="colorTemplates">
-                        <div class="colorbox"*ngFor="let color of product?.available_colors"
+                        <div class="colorbox"*ngFor="let color of product?.available_colors let i = index"
                             [style.backgroundColor]="color.toLowerCase()"
-                            (click)="selectColor(color)"
+                            (click)="selectColor(color, i)"
                             [class.selected]="color === selectedColor">
                         </div>
                     </div>

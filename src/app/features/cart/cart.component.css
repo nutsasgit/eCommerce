@@ -4,7 +4,7 @@
 .card1TitleLine{
     font-size: 20px;
     display: flex;
-    gap: 130px;
+    gap: 50%;
 }
 .button{
     width: 200px;
@@ -22,6 +22,11 @@
     margin-top: 10px;
     display: flex;
     gap: 10px;
+}
+productListWrapper {
+  max-height: 300px;   
+  overflow-y: auto;    
+  overflow-x: hidden;
 }
 .coverImageContainer{
     border: 2px solid rgb(175, 170, 170);
@@ -43,16 +48,18 @@
     /*border: 1px solid black;*/
 }
 .titleContainer{
-    width: 250px;
+    width: 290px;
     height: 70px;
     /*border: 1px solid black;*/
     display: flex;
+    gap: 5%;
 }
 .tileColorSize{
-    width: 200px;
+    width: 270px;
     height: 70px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500px;
+    
 
 }
 .prise{
@@ -64,17 +71,22 @@
     height: 20px;
     font-size: 15px;
     text-transform: capitalize;
+    
 
 }
 .color{
     height: 20px;
+  
 }
 .size{
     height: 20px;
+ 
 }
 .quntityAndRemove{
+    width: 290px;
     display: flex;
-    justify-content: space-between;
+    gap: 60%;
+    
     cursor: pointer;
 }
 .quantity{
