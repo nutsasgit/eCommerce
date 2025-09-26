@@ -56,12 +56,12 @@ decrease(item: any) {
       item.total = item.quantity * item.price;
       this.loadCart();
     }
-  }
+}
+
 remove(item: any) {
   this.cartService.removeItem(item);
   this.loadCart();
 }
-
 
 openCongratsPopup(){
     if (!this.firstName || !this.lastName || !this.eMail || !this.address || !this.zipCode) {
@@ -72,5 +72,5 @@ openCongratsPopup(){
     panelClass: "congratsPopupStyle",
 
     })
-  }
+ }
 }

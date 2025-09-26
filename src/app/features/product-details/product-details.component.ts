@@ -21,7 +21,6 @@ export class ProductDetailsComponent implements OnInit {
   quantity: number = 1;
   quantities: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
   
-
   constructor(private route: ActivatedRoute, private http: HttpClient, private dialog:MatDialog, private cartService: CartService) {}
 
   ngOnInit(): void {
@@ -46,23 +45,19 @@ loadProduct(id: string) {
       error: err => console.error('API error:', err)
     });
 }
-
   
   changeImage(img: string): void {
     this.selectedImage = img;
   }
-
   
   selectColor(color: string, index: number): void {
     this.selectedColor = color;
     this.selectedImage = this.product.images[index];
   }
-
  
   selectSize(size: string): void {
     this.selectedSize = size;
   }
-
  
   addToCart(): void {
     if (!this.product) return;
@@ -78,8 +73,6 @@ loadProduct(id: string) {
       image: this.selectedImage
     };
     this.cartService.addToCart(cartItem);
-    
- 
   }
 Openpopup(): void {
     const items = this.cartService.getItems(); 

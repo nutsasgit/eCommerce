@@ -11,12 +11,10 @@
     margin-left: 100px;
     margin-top: 20px;
     cursor: pointer;
-
 }
 .logo img{
     width: 20px;
     height: 20px;
-
 }
 .title{
     width: 200px;
@@ -45,8 +43,6 @@
     display: flex;
     gap: 10px;
     margin-top: 10px;
-    
-
 }
 
 .userImage img{
@@ -57,7 +53,6 @@
     padding-top: 10px;
     margin-right: 10px;
     margin-top: -15px;
-   
 }
 .cartIcon{
     width: 30px;

@@ -54,7 +54,6 @@ export class LoginComponent {
     this.avatarPreview = '/profileImage.png';
   }
 
-
   onRegister() {
     if (this.password !== this.confirmPassword) {
       alert('Passwords do not match!');
@@ -116,9 +115,7 @@ export class LoginComponent {
           console.error("Login error:", err.error);
           alert("Login failed. Check email and password.");
         }
-      });
-   
-     
+      });  
   }
 switchToLogin(){
     this.isLoginMode = true;

@@ -9,13 +9,11 @@ p{
     display: flex;
     justify-content: center;  
 }
-
 .productMainContainer{
     width: 1720px;
     height: 800px;
     /*border: 1px solid black;*/
-    display: flex;
-    
+    display: flex;    
 }
 .imagesColumn{
     width: 200px;
@@ -53,7 +51,6 @@ p{
    /* border: 1px solid black;*/
     margin-left: 84px;
 }
-
 .productTitle{
     font-weight: 700;
     font-size: 25px;

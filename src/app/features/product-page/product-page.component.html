@@ -52,17 +52,17 @@
 
     
 </div>
-
+   <!--Ende Product Container -->
+<!--Pagination -->
 <div class="pagination">
    <a (click)="changePage(actualPage - 1)" [class.disabled]="actualPage === 1">&lt;</a>
-
   
   <ng-container *ngFor="let p of visiblePages">
     <a *ngIf="isNumber(p)" (click)="changePage(p)" [class.active]="actualPage === p">{{ p }}</a>
     <span *ngIf="!isNumber(p)">...</span>
   </ng-container>
 
-
   <a (click)="changePage(actualPage + 1)" [class.disabled]="actualPage === totalPages">&gt;</a>
 </div>
+<!--End Pagination -->
 

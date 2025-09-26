@@ -18,8 +18,6 @@ isLoggedIn: boolean = false;
 userAvatar: string = 'nav/Union.png';
 isLoginMode: boolean = false; 
 
-
-
 constructor(private router: Router, private dialog:MatDialog, private cartService: CartService) {}
 
 ngOnInit(): void {
@@ -31,8 +29,8 @@ ngOnInit(): void {
         this.updateLoginState();
       });
 
-    
-    }
+}
+
 updateLoginState(): void {
   const token = localStorage.getItem('token');
   const avatar = localStorage.getItem('avatar');
@@ -45,7 +43,6 @@ updateLoginState(): void {
   }
 }
 
-
 redirect(){
   if(this.isLoggedIn){
     this.router.navigate(['/product']);
@@ -53,9 +50,10 @@ redirect(){
     this.router.navigate(['/login']);
   }
 }
+
 switchToLogin(){
     this.isLoginMode = true;
-  }
+}
 
 Openpopup(): void {
     const items = this.cartService.getItems(); 
