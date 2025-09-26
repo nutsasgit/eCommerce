@@ -81,12 +81,6 @@ loadProduct(id: string) {
     
  
   }
-  clearCart() {
-  this.cartService.clearCart();
-  
-}
-
-
 Openpopup(): void {
     const items = this.cartService.getItems(); 
     if (!items || items.length === 0) {
