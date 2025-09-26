@@ -28,9 +28,9 @@ const routes: Routes = [
     path: "product/:id",
     component: ProductDetailsComponent
   },
-  { path: '', redirectTo: '/product', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
-    path: "cart",
+    path: "cart-pupup",
     component: PopupComponent
   },
   {
