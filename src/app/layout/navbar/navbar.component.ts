@@ -16,6 +16,8 @@ export class NavbarComponent {
 navbarType: number = 1;
 isLoggedIn: boolean = false;
 userAvatar: string = 'nav/Union.png';
+isLoginMode: boolean = false; 
+
 
 
 constructor(private router: Router, private dialog:MatDialog, private cartService: CartService) {}
@@ -51,6 +53,9 @@ redirect(){
     this.router.navigate(['/login']);
   }
 }
+switchToLogin(){
+    this.isLoginMode = true;
+  }
 
 Openpopup(): void {
     const items = this.cartService.getItems(); 
