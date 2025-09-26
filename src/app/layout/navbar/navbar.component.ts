@@ -51,8 +51,9 @@ redirect(){
   }
 }
 
-switchToLogin(){
-    this.isLoginMode = true;
+redirectToLogin(): void {
+  this.router.navigate(['/login']).then(() => {
+  });
 }
 
 Openpopup(): void {
