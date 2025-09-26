@@ -14,7 +14,7 @@
       <div class="userImage">
          <img [src]="userAvatar" alt="user Image">
       </div>
-      <div class="dropDown">
+      <div  class="dropDown">
          <img src="nav/chevron-down.png" alt="chevron-down">
       </div>
    </div>
@@ -22,6 +22,6 @@
       <div class="userImage">
          <img src="nav/Union.png" alt="user Icon">
       </div>
-      <button routerLink="/login" class="loginButton">Log In</button>
+      <button (click)="switchToLogin()"class="loginButton">Log In</button>
    </div>
 </div>
